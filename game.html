@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туры по миру</title>
+    <link rel="stylesheet" href="tours.css">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в мир туров!</h1>
+        <nav>
+            <ul>
+                <li><a href="tours.html">Туры</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="game.html">Мини игра</a></li>
+            </ul>
+        </nav>
+    </header>
+    <title>Угадай число - Путевка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #e8f5e9; /* Светло-зеленый фон */
+            color: #2e7d32; /* Темно-зеленый текст */
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 50px;
+            border: 2px solid #4caf50; /* Зеленая рамка */
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4caf50; /* Зеленая кнопка */
+            color: white; /* Белый текст на кнопке */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c; /* Темнее при наведении */
+        }
+        #status {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Угадай число и получи путевку!</h1>
+<p>Я загадал число от 1 до 100. У вас есть 5 попыток, чтобы его угадать!</p>
+
+<input type="number" id="guessInput" min="1" max="100">
+<button id="guessBtn">Угадать</button>
+
+<div id="status"></div>
+<button id="restartBtn" style="display:none;">Начать заново</button>
+
+<script>
+    let randomNumber = Math.floor(Math.random() * 100) + 1; // Случайное число от 1 до 100
+    let attempts = 0; // Количество попыток
+    const maxAttempts = 5; // Максимальное количество попыток
+
+    function checkGuess() {
+        const userGuess = parseInt(document.getElementById('guessInput').value);
+        attempts++;
+
+        if (userGuess === randomNumber) {
+            document.getElementById('status').textContent = `Поздравляем! Вы угадали число ${randomNumber} за ${attempts} попыток! Вы получили путевку!`;
+            document.getElementById('guessBtn').disabled = true; // Отключаем кнопку
+            document.getElementById('restartBtn').style.display = 'block'; // Показываем кнопку "Начать заново"
+        } else if (attempts >= maxAttempts) {
+            document.getElementById('status').textContent = `Вы потратили все попытки! Загаданное число было ${randomNumber}.`;
+            document.getElementById('guessBtn').disabled = true; // Отключаем кнопку
+            document.getElementById('restartBtn').style.display = 'block'; // Показываем кнопку "Начать заново"
+        } else if (userGuess < randomNumber) {
+            document.getElementById('status').textContent = `Слишком низко! У вас осталось ${maxAttempts - attempts} попыток.`;
+        } else {
+            document.getElementById('status').textContent = `Слишком высоко! У вас осталось ${maxAttempts - attempts} попыток.`;
+        }
+    }
+
+    function restartGame() {
+        randomNumber = Math.floor(Math.random() * 100) + 1; // Генерируем новое случайное число
+        attempts = 0; // Сбрасываем количество попыток
+        document.getElementById('status').textContent = '';
+        document.getElementById('guessInput').value = '';
+        document.getElementById('guessBtn').disabled = false; // Включаем кнопку
+        document.getElementById('restartBtn').style.display = 'none'; // Скрываем кнопку "Начать заново"
+    }
+
+    document.getElementById('guessBtn').addEventListener('click', checkGuess);
+    document.getElementById('restartBtn').addEventListener('click', restartGame);
+</script>
+
+</body>
+</html>

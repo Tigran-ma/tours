@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.tour {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin-top: 50px;
+background-color: #e8f5e9; /* Светло-зеленый фон */
+color: #2e7d32; /* Темно-зеленый текст */
+}
+input {
+padding: 10px;
+font-size: 18px;
+width: 50px;
+border: 2px solid #4caf50; /* Зеленая рамка */
+border-radius: 5px;
+}
+button {
+padding: 10px 20px;
+font-size: 18px;
+background-color: #4caf50; /* Зеленая кнопка */
+color: white; /* Белый текст на кнопке */
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+button:hover {
+background-color: #388e3c; /* Темнее при наведении */
+}
+#status {
+font-size: 24px;
+margin-top: 20px;
+}
+#contact{
+    margin-top: 59px;
+    margin-bottom: 59px;
+    max-height: 500vh;
+}       

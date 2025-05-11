@@ -1,0 +1,29 @@
+#gameCanvas {
+	margin: 40px auto;
+	border: 2px solid brown;
+}
+#livesCanvas {
+	border: 1px dashed brown;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+}
+body{
+	background-image: url(фон.jpg);
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+.game{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

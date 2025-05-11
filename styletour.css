@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+#click {
+	width: 700px;
+	height: 700px;
+	background-image: url(биток.jpg);
+	background-size: 100%;
+	margin: 0 auto;
+	border-radius: 1000px;
+}
+#click img {
+	width: 100px;
+	height: auto;
+}
+.containerButton {
+	width: 50%;
+	margin: 20px auto;
+	display: flex;
+	justify-content: space-between;
+}
+.animText {
+	z-index: 10;
+}
+.animText {
+	animation: textup 1s ease-out;
+}
+@keyframes textup {
+	from {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-100px);
+		opacity: 0;
+	}
+}
